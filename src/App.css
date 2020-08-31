@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Molot';
+  src: local('Molot'), url(./fonts/Molot.otf) format('OpenType');
+}
+
+.App {
+  font-family: 'Roboto', sans-serif;
+  
+}
+body{
+  background-color: #2d2d2d !important;
+  color: #fff !important;
+}
