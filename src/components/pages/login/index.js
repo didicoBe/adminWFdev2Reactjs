@@ -35,9 +35,23 @@ export default class Login extends Component {
             localStorage.setItem('token', response.data.response[0].token);
             localStorage.setItem('nome', response.data.response[0].nome);
             localStorage.setItem('id', response.data.response[0].id);
-            return(
-                this.props.history.push('/dash')
-            )
+            if(response.data.response[0].permissao==='admin'){
+                return(
+                    this.props.history.push('/dash')
+                )
+            }else{
+                localStorage.clear()
+                toast.error('🏰 Você não tem permissão para entrar no castelo ♞', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                }); 
+            }
+            
         }).catch((erro)=>{
                     
                     toast.error('🥺 Erro ao fazer login, verifique login e senha', {
@@ -68,19 +82,29 @@ export default class Login extends Component {
 
         }else{
             resposta = api.get('/login/valida/'+login+'/'+token).then(response=>{
-                this.setState({
-                    logado: true,
-                    nome:nome
-                })
-                toast.success('😁 Seja bem vindo(a) '+nome, {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    });
+
+
+                if(response.data.permissao === 'admin'){
+                    this.setState({
+                        logado: true,
+                        nome:nome
+                    })
+                    toast.success('😁 Seja bem vindo(a) '+nome, {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        });
+                }else{
+                    this.setState({
+                        logado: false,
+                        nome:nome
+                    })
+                }
+                
 
                 return  true
             }).catch((erro)=>{

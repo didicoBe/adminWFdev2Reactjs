@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Sidebar from "../../sidebar";
-import {Container, Card, Row, Col  } from 'react-bootstrap';
+import {Container, Row, Col  } from 'react-bootstrap';
 import Lottie from 'lottie-react-web';
 import animation from '../../../animations/dash.json'
 import { toast } from "react-toastify";
@@ -64,14 +64,10 @@ totalCliente = async()=>{
 totalProjetos = async()=>{
     await api.get('/projeto').then(response=>{
         
-        var Andamento = response.data.filter(data => data.status != 'Finalizado')
         
-        var Finalizado = response.data.filter(data => data.status == 'Finalizado')
-        
-
         this.setState({
             totalProjetos: response.data.length,
-            totalProjetosFinalizados:Finalizado.length
+        
         })
     }).catch((erro)=>{
         toast.error('🥺 Erro ao enviar, entre em contato com o suporte!', {

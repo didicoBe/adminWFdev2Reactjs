@@ -1,0 +1,215 @@
+.barra{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    font-size: 35px;
+    font-weight: 200;
+    color: #fff;
+}
+.btnWFPadrao{
+    background-color: #212121;
+    padding: 10px;
+    border: 1px solid #da50d5;
+    border-radius: 15px;
+    font-size: 25px;
+    color: #da50d5;
+    box-shadow: 0 0 7px #da50d5;
+}
+
+.btnWFPadrao:hover{
+    color: #da50d5;
+    text-decoration: none;
+    box-shadow: 0 0 20px #da50d5;
+}
+.CartaoCorpo{
+    border: 1px solid #954792;
+    border-radius: 25px;
+    padding: 25px;    
+    box-shadow: 0 0 12px #954792;
+    background-color: #212121;
+    font-family: 'Roboto';
+    font-weight: 300;
+    margin-top:30px;
+}
+.segundaBarraCartao{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 55px;
+    font-size: 30px;
+    font-weight: 200;
+    color: #da50d5;
+    margin-right: 25px;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
+.lista .list-group-item{
+    background-color: #212121;
+    font-size: 25px;
+    border: 0px;
+    font-weight: 200;
+    color: #da50d5;
+}
+.TituloForm{
+    font-size: 30px;
+    font-weight: 200;
+    color: #da50d5;
+    margin-bottom: 5px;
+}
+
+.formulario .form-group input{
+    border: 1px solid #da50d5;
+    padding-top: 12px;
+    height: 45px;
+    font-size: 25px;
+    color:#da50d5;
+    border-radius: 10px;
+}
+.formulario .form-group input::placeholder{
+    font-size: 25px;
+
+    color:#da50d5;
+}
+.formulario .form-group textarea{
+  border: 1px solid #da50d5;
+    padding-top: 12px;
+    height: 150px;
+    font-size: 25px;
+    color:#da50d5;
+    border-radius: 10px;
+}
+
+.formulario .form-group select{
+  border: 1px solid #da50d5;
+    padding-top: 2px;
+    height: 45px;
+    font-size: 25px;
+    color:#da50d5;
+    border-radius: 10px;
+}
+
+.boxDadosCliente{
+    font-size: 20px;
+    color: #da50d5;
+    font-weight: 300;
+    border-right: 1px solid;
+}
+.boxDadosEmpresa{
+    font-size: 25px;
+    color: #da50d5;
+    font-weight: 300;
+    border-bottom: 1px solid;
+}
+.subtitulo{
+    font-size: 25px;
+    color: #da50d5; 
+    font-weight: 200;
+    margin-top: 20px;
+}
+.progress-bar{
+    background-color: #da50d5 !important;
+}
+.sobreoprojbox{
+    margin: 10px;
+    color: #da50d5;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding: 25px;
+}
+
+.cartaoExterno  {
+    background-color: #da50d5 !important;
+    color: #fff !important;
+    cursor: pointer;
+}
+
+.cartaoExterno:hover {
+    background-color: #fff !important;
+    color: #da50d5 !important;
+    cursor: pointer;
+}
+
+
+.input-range__slider {
+    appearance: none;
+    background: #7b347f;
+    border: 1px solid #7b347f;
+    border-radius: 100%;
+    cursor: pointer;
+    display: block;
+    height: 1rem;
+    margin-left: -0.5rem;
+    margin-top: -0.65rem;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    width: 1rem; }
+    .input-range__slider:active {
+      transform: scale(1.3); }
+    .input-range__slider:focus {
+      box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2); }
+    .input-range--disabled .input-range__slider {
+      background: #cccccc;
+      border: 1px solid #cccccc;
+      box-shadow: none;
+      transform: none; }
+  
+  .input-range__slider-container {
+    transition: left 0.3s ease-out; }
+  
+  .input-range__label {
+    color: #aaaaaa;
+    font-family: "Helvetica Neue", san-serif;
+    font-size: 0.8rem;
+    transform: translateZ(0);
+    white-space: nowrap; }
+  
+  .input-range__label--min,
+  .input-range__label--max {
+    bottom: -1.4rem;
+    position: absolute; }
+  
+  .input-range__label--min {
+    left: 0; }
+  
+  .input-range__label--max {
+    right: 0; }
+  
+  .input-range__label--value {
+    position: absolute;
+    top: -1.8rem; }
+  
+  .input-range__label-container {
+    left: -50%;
+    position: relative; }
+    .input-range__label--max .input-range__label-container {
+      left: 50%; }
+  
+  .input-range__track {
+    background: #eeeeee;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    display: block;
+    height: 0.3rem;
+    position: relative;
+    transition: left 0.3s ease-out, width 0.3s ease-out; }
+    .input-range--disabled .input-range__track {
+      background: #eeeeee; }
+  
+  .input-range__track--background {
+    left: 0;
+    margin-top: -0.15rem;
+    position: absolute;
+    right: 0;
+    top: 50%; }
+  
+  .input-range__track--active {
+    background: #7b347f; }
+  
+  .input-range {
+    height: 1rem;
+    position: relative;
+    width: 95%;
+    margin-top: 25px;
+    margin-bottom: 35px; }

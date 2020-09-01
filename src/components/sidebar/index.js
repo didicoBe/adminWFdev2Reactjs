@@ -13,7 +13,7 @@ import  api from "../../api";
 class Sidebar extends Component {
 
     state={
-        sair:false
+        sair:false,
     }
 
     sair = async()=>{
@@ -58,7 +58,7 @@ class Sidebar extends Component {
     validaOnline = ()=>{
         const login = localStorage.getItem('login');
         const token = localStorage.getItem('token');
-        const nome = localStorage.getItem('nome');
+        
 
         var resposta = false
 
@@ -73,11 +73,21 @@ class Sidebar extends Component {
 
         }else{
             resposta = api.get('/login/valida/'+login+'/'+token).then(response=>{
-                this.setState({
-                    sair: false,
+                if(response.data.permissao === "admin"){
+                    this.setState({
+                        sair: false,
+                    
+                    })
+                }else{
+                    
+                    localStorage.clear();
+                    this.setState({
+                        sair: true,
+                    
+                    })
+                   
+                }
                 
-                })
-               
 
                 return  true
             }).catch((erro)=>{
@@ -120,10 +130,10 @@ class Sidebar extends Component {
                         <hr style={{margin:35,backgroundColor:'#fff'}}/>
                         <div className="menu">
                             <Link to="/dash"><FontAwesomeIcon icon={faColumns}  /> Dash</Link>
-                            <Link to="#"><FontAwesomeIcon icon={faFire}  /> Clientes</Link>
-                            <Link to="#"><FontAwesomeIcon icon={faWpforms}  /> Orcamento</Link>
+                            <Link to="/clientes"><FontAwesomeIcon icon={faFire}  /> Clientes</Link>
+                            <Link to="/orcamento"><FontAwesomeIcon icon={faWpforms}  /> Orcamento</Link>
                             <Link to="#"><FontAwesomeIcon icon={faMoneyBillWave}  /> Financeiro</Link>
-                            <Link to="#"><FontAwesomeIcon icon={faTicketAlt}  /> Suporte</Link>
+                            <Link to="/suporte"><FontAwesomeIcon icon={faTicketAlt}  /> Suporte</Link>
                         </div>
                     </div>
                 </Col>
